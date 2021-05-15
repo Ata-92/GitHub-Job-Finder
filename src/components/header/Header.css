@@ -1,4 +1,4 @@
-img {
+.logos img {
   width: 10vw;
 }
 
@@ -6,6 +6,6 @@ h1 {
   color: #01448C;
 }
 
-span {
+h1 span {
   font-size: 3vw;
 }
