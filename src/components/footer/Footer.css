@@ -7,3 +7,24 @@
   background-color: #fff;
   position: relative;
 }
+
+.wrapper__designer em {
+  color: rgba(128, 128, 128, .9);
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.wrapper__icon {
+  width: 2vw;
+  position: relative;
+  top: 1vh;
+  bottom: 1vh;
+  margin: 0 2vw;
+}
+
+.wrapper__design {
+  color: #007BFE;
+  font-size: x-large;
+  text-transform: uppercase;
+  font-weight: 00;
+}
