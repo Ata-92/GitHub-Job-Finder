@@ -22,7 +22,7 @@ div input:focus, .search:focus {
   text-transform: uppercase;
   background-color: #007BFE;
   color: #fff;
-  padding: 1vh 4.8vw;
+  padding: 1.2vh 4.8vw;
   margin: 1vh 0;
   cursor: pointer;
 }
