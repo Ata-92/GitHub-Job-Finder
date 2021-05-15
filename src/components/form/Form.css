@@ -9,3 +9,20 @@ div input {
   padding: .5vw;
   margin: 1vh 0;
 }
+
+div input:focus, .search:focus {
+  box-shadow: 0 0 .1vw .1vw #007BFE;
+  outline: none;
+}
+
+.search {
+  border: none;
+  outline: none;
+  border-radius: .2vw;
+  text-transform: uppercase;
+  background-color: #007BFE;
+  color: #fff;
+  padding: 1vh 4.8vw;
+  margin: 1vh 0;
+  cursor: pointer;
+}
