@@ -1,0 +1,11 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+}
+
+div input {
+  border: .1vw solid #007BFE;
+  border-radius: .2vw;
+  padding: .5vw;
+  margin: 1vh 0;
+}

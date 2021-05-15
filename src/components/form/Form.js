@@ -11,7 +11,7 @@ const Form = () => {
         <div className="location">
           <input className="location__input" type="text" placeholder="LOCATION"/>
         </div>
-        <button className="search" type="submit">search</button>
+        <button className="search" type="button">search</button>
       </form>
     </div>
   );
