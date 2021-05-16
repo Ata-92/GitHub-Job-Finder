@@ -18,6 +18,28 @@ const Form = () => {
     setLocation(e.target.value);
   };
 
+  const findJobs = () => {
+    setJobs(loading);
+
+    axios
+      .get(`/positions.json?description=${description}&location=${location}`)
+      .then((response) =>
+        response.data.map((job) => ({
+          id: `${job.id}`,
+          company_logo: `${job.company_logo}`,
+          title: `${job.title}`,
+          company_and_location: `${job.company}-${job.location}`,
+          type: `${job.type}`,
+          apply: `${job.how_to_apply}`,
+        }))
+      )
+      .then((job) => {
+        setJobs([]);
+        setJobs(jobs.push(job));
+      })
+      .catch(() => setJobs(error));
+  };
+
   return (
     <div className="Form">
       <form action="/" method="get" className="container">
