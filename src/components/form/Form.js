@@ -6,6 +6,10 @@ import error from "../../assets/404.png";
 import Job from "../job/Job";
 
 const Form = () => {
+  const [jobs, setJobs] = useState([]);
+  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
+
 
   return (
     <div className="Form">
@@ -32,6 +36,7 @@ const Form = () => {
           search
         </button>
       </form>
+
     </div>
   );
 };
