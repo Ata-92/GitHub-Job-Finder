@@ -9,6 +9,7 @@ const Form = () => {
   const [jobs, setJobs] = useState([]);
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
+  const [gif, setGif] = useState(false);
 
   const getDescription = (e) => {
     setDescription(e.target.value);
@@ -19,7 +20,7 @@ const Form = () => {
   };
 
   const findJobs = () => {
-    setJobs(loading);
+    setGif(true);
 
     axios
       .get(`/positions.json?description=${description}&location=${location}`)
@@ -33,9 +34,9 @@ const Form = () => {
           apply: `${job.how_to_apply}`,
         }))
       )
-      .then((job) => {
-        setJobs([]);
-        setJobs(jobs.push(job));
+      .then((jobs) => {
+        setGif(false);
+        setJobs(jobs);
       })
       .catch(() => setJobs(error));
   };
@@ -65,8 +66,9 @@ const Form = () => {
           search
         </button>
       </form>
+      {gif && <img src={loading} alt="Loading Gif" className="loading-gif" />}
       {jobs.map((job, index) => (
-        <Job key={`job${index}`} data={job}/>
+        <Job key={`job${index}`} data={job} />
       ))}
     </div>
   );
