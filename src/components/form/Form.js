@@ -65,7 +65,9 @@ const Form = () => {
           search
         </button>
       </form>
-
+      {jobs.map((job, index) => (
+        <Job key={`job${index}`} data={job}/>
+      ))}
     </div>
   );
 };
