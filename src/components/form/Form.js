@@ -10,6 +10,13 @@ const Form = () => {
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
 
+  const getDescription = (e) => {
+    setDescription(e.target.value);
+  };
+
+  const getLocation = (e) => {
+    setLocation(e.target.value);
+  };
 
   return (
     <div className="Form">
