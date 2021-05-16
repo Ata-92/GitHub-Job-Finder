@@ -1,6 +1,6 @@
 import "./Job.css";
 
-const Job = () => {
+const Job = ({data}) => {
 
 
   return (
