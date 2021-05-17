@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/GitHub-Job-Finder/static/css/main.6bf537bb.chunk.css",
+    "main.js": "/GitHub-Job-Finder/static/js/main.2e461770.chunk.js",
+    "main.js.map": "/GitHub-Job-Finder/static/js/main.2e461770.chunk.js.map",
+    "runtime-main.js": "/GitHub-Job-Finder/static/js/runtime-main.95e3a417.js",
+    "runtime-main.js.map": "/GitHub-Job-Finder/static/js/runtime-main.95e3a417.js.map",
+    "static/js/2.cb85c7eb.chunk.js": "/GitHub-Job-Finder/static/js/2.cb85c7eb.chunk.js",
+    "static/js/2.cb85c7eb.chunk.js.map": "/GitHub-Job-Finder/static/js/2.cb85c7eb.chunk.js.map",
+    "static/js/3.8fd9a920.chunk.js": "/GitHub-Job-Finder/static/js/3.8fd9a920.chunk.js",
+    "static/js/3.8fd9a920.chunk.js.map": "/GitHub-Job-Finder/static/js/3.8fd9a920.chunk.js.map",
+    "index.html": "/GitHub-Job-Finder/index.html",
+    "static/css/main.6bf537bb.chunk.css.map": "/GitHub-Job-Finder/static/css/main.6bf537bb.chunk.css.map",
+    "static/js/2.cb85c7eb.chunk.js.LICENSE.txt": "/GitHub-Job-Finder/static/js/2.cb85c7eb.chunk.js.LICENSE.txt",
+    "static/media/404.ed881872.png": "/GitHub-Job-Finder/static/media/404.ed881872.png",
+    "static/media/design.9f215bce.svg": "/GitHub-Job-Finder/static/media/design.9f215bce.svg",
+    "static/media/job-logo.bb022661.svg": "/GitHub-Job-Finder/static/media/job-logo.bb022661.svg",
+    "static/media/loading.11562bdd.gif": "/GitHub-Job-Finder/static/media/loading.11562bdd.gif",
+    "static/media/octocat.237e2214.png": "/GitHub-Job-Finder/static/media/octocat.237e2214.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95e3a417.js",
+    "static/js/2.cb85c7eb.chunk.js",
+    "static/css/main.6bf537bb.chunk.css",
+    "static/js/main.2e461770.chunk.js"
+  ]
+}
