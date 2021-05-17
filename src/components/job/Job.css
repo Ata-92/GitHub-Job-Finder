@@ -3,9 +3,20 @@
 }
 
 .Job img {
+  width: 15vw;
+  height: 15vh;
   margin: auto;
+  object-fit: contain;
 }
 
-h2 span .initial {
+.Job span .title-initial {
   font-size: 3vw;
+}
+
+.Job span .cl-initial {
+  font-size: 1.5vw;
+}
+
+.Job span .type-initial {
+  font-size: 1.5vw;
 }
