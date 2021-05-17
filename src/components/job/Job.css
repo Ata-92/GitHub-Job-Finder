@@ -13,10 +13,6 @@
   font-size: 3vw;
 }
 
-.Job span .cl-initial {
-  font-size: 1.5vw;
-}
-
-.Job span .type-initial {
+span .cl-initial, span .type-initial, .job-apply::first-letter {
   font-size: 1.5vw;
 }

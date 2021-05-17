@@ -66,7 +66,7 @@ const Form = () => {
           search
         </button>
       </form>
-      {gif && <img src={loading} alt="Loading Gif" className="loading-gif" />}
+      {gif && <img src={loading} alt="Loading Gif" className="loading-gif w-25 mx-auto" />}
       {jobs.map((job, index) => (
         <Job key={`job${index}`} data={job} />
       ))}

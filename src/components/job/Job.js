@@ -25,7 +25,7 @@ const Job = ({ data }) => {
           ))}</p>
           <a
             className="job-apply btn btn-success text-white w-50"
-            href={data.apply.split("href=")[1].split(">")[0].slice(1)} rel="noreferrer" target="_blank"
+            href={data.apply.split("href=")[1].split(">")[0].slice(1, data.apply.split("href=")[1].split(">")[0].length - 1)} rel="noreferrer" target="_blank"
           >
             APPLY
           </a>
