@@ -3,11 +3,11 @@ import "./Job.css";
 const Job = ({ data }) => {
   return (
     <div className="Job card border border-success rounded w-50 my-5 text-uppercase">
-      <img
+      {data.company_logo !== "null" ? <img
         src={data.company_logo}
         alt="Company Logo"
         className="company-logo card-img-top py-3"
-      />
+      /> : <div className="no-company_logo py-5"></div>}
       <div className="job-info border border-success">
         <h2 className="title card-header text-danger">
           {data.title.split(" ").map((word, index) => (
