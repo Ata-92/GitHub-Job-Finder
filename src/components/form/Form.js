@@ -10,6 +10,7 @@ const Form = () => {
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [gif, setGif] = useState(false);
+  const [err, setErr] = useState(false);
 
   const getDescription = (e) => {
     setDescription(e.target.value);
@@ -25,20 +26,23 @@ const Form = () => {
     axios
       .get(`/positions.json?description=${description}&location=${location}`)
       .then((response) =>
-        response.data.map((job) => ({
-          id: `${job.id}`,
+        { if (response.status === 404) throw new Error(`Something went wrong : ${response.status}`);
+          return response.data.map((job) => ({
           company_logo: `${job.company_logo}`,
           title: `${job.title}`,
           company_and_location: `${job.company}-${job.location}`,
           type: `${job.type}`,
           apply: `${job.how_to_apply}`,
-        }))
+        }))}
       )
       .then((jobs) => {
         setGif(false);
         setJobs(jobs);
       })
-      .catch(() => setJobs(error));
+      .catch((error) => {
+        console.log(error)
+        setGif(false);
+        setErr(true)});
   };
 
   return (
@@ -67,9 +71,10 @@ const Form = () => {
         </button>
       </form>
       {gif && <img src={loading} alt="Loading Gif" className="loading-gif w-25 mx-auto" />}
-      {jobs.map((job, index) => (
+      {jobs?.map((job, index) => (
         <Job key={`job${index}`} data={job} />
       ))}
+      {err && <img src={error} alt="404 Error" className="404-error w-50 mx-auto" />}
     </div>
   );
 };
