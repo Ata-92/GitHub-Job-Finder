@@ -39,8 +39,8 @@ const Form = () => {
         setGif(false);
         setJobs(jobs);
       })
-      .catch((error) => {
-        console.log(error)
+      .catch((erro) => {
+        console.log(erro)
         setGif(false);
         setErr(true)});
   };
