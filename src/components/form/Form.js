@@ -6,17 +6,17 @@ import error from "../../assets/404.png";
 import Job from "../job/Job";
 
 const Form = () => {
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState();
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [gif, setGif] = useState(false);
   const [err, setErr] = useState(false);
 
-  const getDescription = (e) => {
+  const getDescription = e => {
     setDescription(e.target.value);
   };
 
-  const getLocation = (e) => {
+  const getLocation = e => {
     setLocation(e.target.value);
   };
 
@@ -25,24 +25,26 @@ const Form = () => {
 
     axios
       .get(`/positions.json?description=${description}&location=${location}`)
-      .then((response) =>
-        { if (response.status === 404) throw new Error(`Something went wrong : ${response.status}`);
-          return response.data.map((job) => ({
+      .then(response => {
+        if (response.status === 404)
+          throw new Error(`Something went wrong : ${response.status}`);
+        return response.data.map(job => ({
           company_logo: `${job.company_logo}`,
           title: `${job.title}`,
           company_and_location: `${job.company}-${job.location}`,
           type: `${job.type}`,
           apply: `${job.how_to_apply}`,
-        }))}
-      )
-      .then((jobs) => {
+        }));
+      })
+      .then(jobs => {
         setGif(false);
         setJobs(jobs);
       })
-      .catch((erro) => {
-        console.log(erro)
+      .catch(erro => {
+        console.log(erro);
         setGif(false);
-        setErr(true)});
+        setErr(true);
+      });
   };
 
   return (
@@ -70,11 +72,22 @@ const Form = () => {
           search
         </button>
       </form>
-      {gif && <img src={loading} alt="Loading Gif" className="loading-gif w-25 mx-auto" />}
+      {gif && (
+        <img
+          src={loading}
+          alt="Loading Gif"
+          className="loading-gif w-25 mx-auto"
+        />
+      )}
       {jobs?.map((job, index) => (
         <Job key={`job${index}`} data={job} />
       ))}
-      {err && <img src={error} alt="404 Error" className="404-error w-50 mx-auto" />}
+      {jobs?.length === 0 && (
+        <img src={error} alt="404 Error" className="404-error w-50 mx-auto" />
+      )}
+      {err && (
+        <img src={error} alt="404 Error" className="404-error w-50 mx-auto" />
+      )}
     </div>
   );
 };
