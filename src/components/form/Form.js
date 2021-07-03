@@ -24,7 +24,7 @@ const Form = () => {
     setGif(true);
 
     axios
-      .get(`/positions.json?description=${description}&location=${location}`)
+      .get(`https://jobs.github.com/positions.json?description=${description}&location=${location}`)
       .then(response => {
         if (response.status === 404)
           throw new Error(`Something went wrong : ${response.status}`);
